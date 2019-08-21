@@ -163,7 +163,7 @@ TARGET_FS_CONFIG_GEN += \
     $(PLATFORM_PATH)/config.fs \
     $(PLATFORM_PATH)/mot_aids.fs
 
-# Kernel
+		# Kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3
 BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1 service_locator.enable=1
 BOARD_KERNEL_CMDLINE += swiotlb=2048 androidboot.configfs=true
@@ -176,7 +176,7 @@ BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET := 0x01000000
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_CLANG_COMPILE := true
+#TARGET_KERNEL_CLANG_COMPILE := true
 TARGER_KERNEL_CLANG_VERSION := 9.0.5
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8998
@@ -246,8 +246,4 @@ WIFI_DRIVER_DEFAULT := qca_cld3
 WIFI_DRIVER_FW_PATH_STA := "sta"
 WIFI_DRIVER_FW_PATH_AP  := "ap"
 WIFI_DRIVER_FW_PATH_P2P := "p2p"
-WIFI_DRIVER_OPERSTATE_PATH := "/sys/class/net/wlan0/operstate"
-WIFI_DRIVER_STATE_CTRL_PARAM := "/sys/kernel/boot_wlan/boot_wlan"
-WIFI_DRIVER_STATE_ON := 1
-WIFI_DRIVER_STATE_OFF := 0
 PRODUCT_VENDOR_MOVE_ENABLED := true
