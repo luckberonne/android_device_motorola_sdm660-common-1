@@ -200,5 +200,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
-    persist.vendor.wifi.softtap.interface=wlan0 \
+    persist.vendor.wifi.softap.interface=wlan0 \
     wifi.concurrent.interface=wlan0
