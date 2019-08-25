@@ -42,7 +42,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.use.sw.ape.decoder=true \
     vendor.fm.a2dp.conc.disabled=true \
     vendor.voice.path.for.pcm.voip=true \
-    vendor.audio.offload.min.duration.secs=60
+    vendor.audio.offload.min.duration.secs=60 \
+    ro.config.media_vol_steps=25 \
+    ro.config.vc_call_vol_steps=8 \
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -196,6 +198,15 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 # Voice assistant
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opa.eligible_device=true
+    
+
+# VoLTE / VoWifi -Radio
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.dbg.ims_volte_enable=1 \
+    persist.dbg.volte_avail_ovr=1 \
+    persist.dbg.vt_avail_ovr=1 \
+    persist.dbg.wfc_avail_ovr=1 \
+    persist.radio.calls.on.ims=1    
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
