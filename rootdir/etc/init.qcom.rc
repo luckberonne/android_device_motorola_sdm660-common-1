@@ -98,7 +98,7 @@ on late-fs
     start vendor.gralloc-2-0
 
     # Wait for hwservicemanager ready since fsck might be triggered in mount_all --late
-    # In such case, init won't responce the property_set from hwservicemanager and then
+    # In such case, init wont responce the property_set from hwservicemanager and then
     # cause services for bootanim not running.
     wait_for_prop hwservicemanager.ready true
 
@@ -562,7 +562,7 @@ on post-fs-data
     mkdir /data/hostapd 0770 system wifi
 
     # Create /data/time folder for time-services
-    mkdir /data/vendor/time/ 0700 system system
+    mkdir /data/vendor/time 0700 system system
 
     # Create a folder for audio delta files
     mkdir /data/vendor/audio/acdbdata 0770 media audio
@@ -1111,7 +1111,7 @@ service vendor.qcom-sh /vendor/bin/init.qcom.sh
     user root
     group root system radio
     oneshot
-	
+
 service vendor.class_main-sh /vendor/bin/init.class_main.sh
     class main
     user root
@@ -1225,7 +1225,7 @@ service vendor.esepmdaemon /vendor/bin/esepmdaemon
     group nfc
 
 service vendor.time_daemon /vendor/bin/time_daemon
-    class main
+    class late_start
     user root
     group root
     writepid /dev/cpuset/system-background/tasks

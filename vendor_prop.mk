@@ -45,6 +45,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.offload.min.duration.secs=60 \
     ro.config.media_vol_steps=25 \
     ro.config.vc_call_vol_steps=8 \
+    
+
+# OEM Unlock reporting
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+	ro.oem_unlock_supported=1    
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
