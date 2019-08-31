@@ -56,10 +56,6 @@
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveNotificationLed">true</bool>
 
-    <!-- Whether device needs to wait for Qualcomm MPCTL service to start
-         before setting power profiles on boot. -->
-    <bool name="config_waitForMpctlOnBoot">true</bool>
-
     <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support.
          The N entries of this array define N  1 zones as follows:
 
@@ -194,7 +190,7 @@
          Wifi interfaces.  If the device doesn't want to support tethering over Wifi this
          should be empty.  An example would be "softap.*" -->
     <string-array translatable="false" name="config_tether_wifi_regexs">
-        <item>wlan0</item>
+        <item>"wlan\\d"</item>
         <item>wigig0</item>
         <item>softap0</item>
     </string-array>
@@ -275,19 +271,20 @@
     <!-- Vibrator pattern for feedback about a long screen/key press -->
     <integer-array name="config_longPressVibePattern">
         <item>0</item>
-        <item>25</item>
+        <item>7</item>
     </integer-array>
 
     <!-- Vibrator pattern for feedback about touching a virtual key -->
     <integer-array name="config_virtualKeyVibePattern">
         <item>0</item>
-        <item>34</item>
+        <item>5</item>
+        <item>10</item>
     </integer-array>
 
     <!-- Vibrator pattern for a very short but reliable vibration for soft keyboard tap -->
     <integer-array name="config_keyboardTapVibePattern">
         <item>0</item>
-        <item>25</item>
+        <item>10</item>
     </integer-array>
 
     <!-- This string array should be overridden by the device to present a list of network
@@ -454,6 +451,24 @@
          For example, a multi-sim device can have 2 phones/logical modems, but 3 physical slots,
          or a single SIM device can have 1 phones/logical modems, but 2 physical slots (one eSIM
          and one pSIM) -->
-    <integer name="config_num_physical_slots">2</integer>
+    <integer name="config_num_physical_slots">2</integer>  
+    
+    <!-- allow moving audio panel -->
+<bool name="config_audioPanelOnLeftSide">true</bool>
+
+<!-- Whether device needs to wait for Qualcomm MPCTL service to start
+         before setting power profiles on boot. -->
+    <bool name="config_waitForMpctlOnBoot">true</bool>
+    
+    <!-- Whether to enable Qualcomm Boost Framework -->
+    <bool name="config_enableQcCpuBoost">true</bool>
+    
+    <!-- Enable overlay for all location components. -->
+	<string name="config_networkLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
+	<string name="config_fusedLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
+	
+	<!--  Define Google play service package for FRP-->
+    <string name="config_persistentDataPackageName" translatable="false">com.google.android.gms</string>
+	
 
 </resources>
